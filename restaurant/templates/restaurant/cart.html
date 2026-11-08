@@ -1,0 +1,3 @@
+{% extends 'restaurant/base.html' %}{% block title %}შენი კალათა • სუფრა{% endblock %}
+{% block content %}<section class="cart-heading"><p class="eyebrow">შენი არჩევანი</p><h1>შენი კალათა</h1><p>შეცვალე რაოდენობა — ჯამი ავტომატურად განახლდება.</p></section>
+{% if error %}<div class="notice" role="alert"><p>{{ error }} შენახული კალათა შენარჩუნებულია.</p><a class="button" href="{% url 'restaurant:cart' %}">ხელახლა ცდა</a><form method="post" action="{% url 'restaurant:clear' %}">{% csrf_token %}<button class="secondary">კალათის გასუფთავება</button></form></div>{% else %}<div id="cart-content" aria-live="polite">{% include 'restaurant/_cart.html' %}</div>{% endif %}{% endblock %}

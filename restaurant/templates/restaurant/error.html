@@ -1,0 +1,1 @@
+{% extends 'restaurant/base.html' %}{% block content %}<section class="empty"><h1>მოქმედება ვერ შესრულდა</h1><p role="alert">{{ error }}</p><a class="button" href="{% url 'restaurant:cart' %}">კალათაში დაბრუნება</a><a class="button secondary" href="{% url 'restaurant:menu' %}">მენიუ</a></section>{% endblock %}
